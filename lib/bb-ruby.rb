@@ -95,13 +95,13 @@ module BBRuby
       '[list][*]item 1[*] item2[/list]',
       :list],
     'Ordered list (numerical)' => [
-      /\[list=1(:.*)?\](.+)\[\/list(:.)?\1?\]/mi,
+      /\[list=1(:.*)?\](.*?)\[\/list(:.)?\1?\]/mi,
       '<ol>\2</ol>',
       'Ordered list numerically',
       '[list=1][*]item 1[*] item2[/list]',
       :list],
     'Ordered list (alphabetical)' => [
-      /\[list=a(:.*)?\](.+)\[\/list(:.)?\1?\]/mi,
+      /\[list=a(:.*)?\](.*?)\[\/list(:.)?\1?\]/mi,
       '<ol sytle="list-style-type: lower-alpha;">\2</ol>',
       'Ordered list alphabetically',
       '[list=a][*]item 1[*] item2[/list]',
@@ -199,7 +199,7 @@ module BBRuby
       '[gvideo]http://video.google.com/videoplay?docid=-2200109535941088987[/gvideo]',
       :video],
     'Email' => [
-      /\[email(:.+)?\](.+)\[\/email\1?\]/i,
+      /\[email(:.+)?\](.*?)\[\/email\1?\]/i,
       '<a href="mailto:\2">\2</a>',
       'Link to email address',
       '[email]wadus@wadus.com[/email]',
