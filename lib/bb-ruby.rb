@@ -59,7 +59,7 @@ module BBRuby
       '[size=20]Here is some larger text[/size]',
       :size],
     'Color' => [
-      /\[color=['"]?(\w+|\#\w{6})['"]?(:.+)?\](.*?)\[\/color\2?\]/im,
+      /\[color=['"]?(\w+|\#[0-9aAbBcCdDeEfF]{6})['"]?(:.+)?\](.*?)\[\/color\2?\]/im,
       '<span style="color: \1;">\3</span>',
       'Change text color',
       '[color=red]This is red text[/color]',
@@ -89,7 +89,7 @@ module BBRuby
       '[*]list item',
       :listitem],
     'Unordered list (alternative)' => [
-      /\[list(:.*)?\]((?:(?!list).)*)\[\/list(:.)?\1?\]/mi,
+      /\[list(:.*)?\](.*?)\[\/list(:.)?\1?\]/mi,
       '<ul>\2</ul>',
       'Unordered list item',
       '[list][*]item 1[*] item2[/list]',
